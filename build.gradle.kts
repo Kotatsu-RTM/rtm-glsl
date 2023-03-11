@@ -95,13 +95,14 @@ publishing.publications {
                 uri("https://maven.siro256.dev/repository/maven-public/")
 
             credentials {
-                username = System.getProperty("NexusUsername")
-                password = System.getProperty("NexusPassword")
+                username = System.getenv("NexusUsername")
+                password = System.getenv("NexusPassword")
             }
         }
     }
 }
 
 signing {
+    useInMemoryPgpKeys(System.getenv("SigningKey"), System.getenv("SigningKeyPassword"))
     sign(publishing.publications.getByName("publication"))
 }
