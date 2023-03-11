@@ -12,7 +12,7 @@ version = "0.1.0-SNAPSHOT"
 description = "The library for easy use of GLSL with RealTrainMod"
 
 repositories {
-    maven { url = uri("https://maven.siro256.dev/repository/maven-public/") }
+    maven { url = uri("https://repo.siro256.dev/repository/maven-public/") }
 }
 
 dependencies {
@@ -90,9 +90,9 @@ publishing.publications {
     repositories {
         maven {
             url = if (version.toString().endsWith("SNAPSHOT"))
-                uri("https://maven.siro256.dev/repository/maven-snapshots/")
+                uri("https://repo.siro256.dev/repository/maven-snapshots/")
             else
-                uri("https://maven.siro256.dev/repository/maven-public/")
+                uri("https://repo.siro256.dev/repository/maven-public/")
 
             credentials {
                 username = System.getenv("NexusUsername")
