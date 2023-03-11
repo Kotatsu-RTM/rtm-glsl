@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "dev.siro256.forgelib"
-version = "1.0-SNAPSHOT"
+version = "0.1.0-SNAPSHOT"
 
 description = "The library for easy use of GLSL with RealTrainMod"
 
