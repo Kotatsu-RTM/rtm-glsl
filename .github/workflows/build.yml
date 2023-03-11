@@ -26,7 +26,7 @@ jobs:
 
       - name: Build
         id: build
-        run: ./gradlew build
+        run: ./gradlew build --no-daemon
 
       - name: Upload artifact
         if: steps.build.outcome == 'success'
@@ -43,4 +43,4 @@ jobs:
           NexusPassword: ${{ secrets.SIRO256_NEXUS_PASSWORD }}
           SigningKey: ${{ secrets.SIRO256_MAVEN_SIGNING_KEY }}
           SigningKeyPassword: ${{ secrets.SIRO256_MAVEN_SIGNING_KEY_PASSWORD }}
-        run: ./gradlew publish
+        run: ./gradlew publish --no-daemon
