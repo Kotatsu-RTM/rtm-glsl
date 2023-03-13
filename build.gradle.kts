@@ -50,40 +50,42 @@ tasks {
     }
 }
 
-publishing.publications {
-    create("publication", MavenPublication::class.java) {
-        groupId = rootProject.group.toString()
-        artifactId = rootProject.name
-        version = rootProject.version.toString()
+publishing {
+    publications {
+        create("publication", MavenPublication::class.java) {
+            groupId = rootProject.group.toString()
+            artifactId = rootProject.name
+            version = rootProject.version.toString()
 
-        from(components.getByName("java"))
-        artifact(tasks.getByName("sourcesJar"))
+            from(components.getByName("java"))
+            artifact(tasks.getByName("sourcesJar"))
 
-        pom {
-            name.set(rootProject.name)
-            description.set(rootProject.description)
-            url.set("https://github.com/Kotatsu-RTM/rtm-glsl")
-
-            licenses {
-                license {
-                    name.set("MIT License")
-                    url.set("https://opensource.org/licenses/mit-license.php")
-                }
-            }
-
-            developers {
-                developer {
-                    id.set("Siro256")
-                    name.set("Siro_256")
-                    email.set("siro@siro256.dev")
-                    url.set("https://github.com/Siro256")
-                }
-            }
-
-            scm {
-                connection.set("scm:git:git://github.com/Kotatsu-RTM/rtm-glsl.git")
-                developerConnection.set("scm:git:ssh://github.com/Kotatsu-RTM/rtm-glsl.git")
+            pom {
+                name.set(rootProject.name)
+                description.set(rootProject.description)
                 url.set("https://github.com/Kotatsu-RTM/rtm-glsl")
+
+                licenses {
+                    license {
+                        name.set("MIT License")
+                        url.set("https://opensource.org/licenses/mit-license.php")
+                    }
+                }
+
+                developers {
+                    developer {
+                        id.set("Siro256")
+                        name.set("Siro_256")
+                        email.set("siro@siro256.dev")
+                        url.set("https://github.com/Siro256")
+                    }
+                }
+
+                scm {
+                    connection.set("scm:git:git://github.com/Kotatsu-RTM/rtm-glsl.git")
+                    developerConnection.set("scm:git:ssh://github.com/Kotatsu-RTM/rtm-glsl.git")
+                    url.set("https://github.com/Kotatsu-RTM/rtm-glsl")
+                }
             }
         }
     }
