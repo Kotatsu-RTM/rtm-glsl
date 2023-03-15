@@ -16,7 +16,7 @@ class VertexBufferObject(usage: GLBufferUsage, vertices: FloatArray, private val
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, name)
         GL15.glBufferData(
             GL15.GL_ARRAY_BUFFER,
-            BufferAllocator.createDirectFloatBuffer(vertices.size).put(vertices),
+            BufferAllocator.createDirectFloatBuffer(vertices.size).put(vertices).apply { rewind() },
             usage.constant
         )
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0)
