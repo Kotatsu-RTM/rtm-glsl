@@ -106,6 +106,6 @@ publishing {
 }
 
 signing {
-    useInMemoryPgpKeys(System.getenv("SigningKey"), System.getenv("SigningKeyPassword"))
+    useInMemoryPgpKeys(System.getenv("SigningKeyId"), System.getenv("SigningKey"), System.getenv("SigningKeyPassword"))
     sign(publishing.publications.getByName("publication"))
 }
