@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager
 import org.lwjgl.opengl.GL11
 import org.lwjgl.opengl.GL20
 
-abstract class Shader<T: Shader.EntryPoint>(vertexShaderSource: String, fragmentShaderSource: String) {
+abstract class Shader<T: Shader.EntryPoint<U>, U: Shader.Resource>(vertexShaderSource: String, fragmentShaderSource: String) {
     private val name = GL20.glCreateProgram()
     protected abstract val entryPoint: T
 
@@ -17,7 +17,7 @@ abstract class Shader<T: Shader.EntryPoint>(vertexShaderSource: String, fragment
 
     protected abstract fun preUse()
 
-    protected abstract fun postUse()
+    protected abstract fun postUse(resource: U)
 
     init {
         if (name == 0) throw RuntimeException("glCreateProgram returns 0")
@@ -54,10 +54,12 @@ abstract class Shader<T: Shader.EntryPoint>(vertexShaderSource: String, fragment
         """.trimIndent())
     }
 
-    abstract class EntryPoint(private val shader: Shader<*>) {
-        fun end() {
-            shader.postUse()
+    abstract class EntryPoint<T: Resource>(private val shader: Shader<*, T>) {
+        fun end(resource: T) {
+            shader.postUse(resource)
             GL20.glUseProgram(0)
         }
     }
+
+    abstract class Resource
 }
