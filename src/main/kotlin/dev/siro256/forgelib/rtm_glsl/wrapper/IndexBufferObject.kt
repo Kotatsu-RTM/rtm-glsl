@@ -14,7 +14,7 @@ class IndexBufferObject(usage: GLBufferUsage, indices: IntArray) {
 
         GL15.glBindBuffer(GL15.GL_ELEMENT_ARRAY_BUFFER, name)
         GL15.glBufferData(
-            GL15.GL_ARRAY_BUFFER,
+            GL15.GL_ELEMENT_ARRAY_BUFFER,
             BufferAllocator.createDirectIntBuffer(indices.size).put(indices).apply { rewind() },
             usage.constant
         )
