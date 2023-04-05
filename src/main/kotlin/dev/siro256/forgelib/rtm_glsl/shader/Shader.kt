@@ -61,5 +61,5 @@ abstract class Shader<T: Shader.EntryPoint<U>, U: Shader.Resource>(vertexShaderS
         }
     }
 
-    abstract class Resource
+    interface Resource
 }
