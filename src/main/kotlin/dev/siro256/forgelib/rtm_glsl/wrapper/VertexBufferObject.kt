@@ -9,7 +9,7 @@ abstract class VertexBufferObject(usage: GLBufferUsage, vertices: FloatArray, pr
     @Suppress("MemberVisibilityCanBePrivate")
     protected val name = GL15.glGenBuffers()
 
-    fun bind(index: Int) = GL43.glBindVertexBuffer(index, name, 0, stride)
+    open fun bind(index: Int) = GL43.glBindVertexBuffer(index, name, 0, stride)
 
     init {
         if (name == 0) throw RuntimeException("glGenBuffers returns 0")

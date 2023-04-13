@@ -6,8 +6,8 @@ abstract class VertexArrayObject {
     @Suppress("MemberVisibilityCanBePrivate")
     protected val name = GL30.glGenVertexArrays()
 
-    fun bind() = GL30.glBindVertexArray(name)
-    fun unbind() = GL30.glBindVertexArray(0)
+    open fun bind() = GL30.glBindVertexArray(name)
+    open fun unbind() = GL30.glBindVertexArray(0)
 
     init {
         if (name == 0) throw RuntimeException("glGenVertexArrays returns 0")
