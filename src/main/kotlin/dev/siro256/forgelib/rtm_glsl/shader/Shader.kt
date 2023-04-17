@@ -45,5 +45,5 @@ abstract class Shader<T: Shader.RenderData>(vertexShaderSource: String, fragment
         """.trimIndent())
     }
 
-    abstract class RenderData
+    interface RenderData
 }
