@@ -4,7 +4,9 @@ import org.apache.logging.log4j.LogManager
 import org.lwjgl.opengl.GL11
 import org.lwjgl.opengl.GL20
 
+@Suppress("unused")
 abstract class Shader<T: Shader.RenderData>(vertexShaderSource: String, fragmentShaderSource: String) {
+    @Suppress("MemberVisibilityCanBePrivate")
     protected val name = GL20.glCreateProgram()
     protected val callBuffer = mutableListOf<T>()
 

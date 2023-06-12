@@ -5,6 +5,7 @@ import dev.siro256.forgelib.rtm_glsl.enum.GLBufferUsage
 import org.lwjgl.opengl.GL15
 import org.lwjgl.opengl.GL43
 
+@Suppress("unused")
 abstract class VertexBufferObject private constructor(private val stride: Int) {
     @Suppress("MemberVisibilityCanBePrivate")
     protected val name = GL15.glGenBuffers()

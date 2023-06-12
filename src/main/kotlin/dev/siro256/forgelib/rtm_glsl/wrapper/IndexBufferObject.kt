@@ -4,6 +4,7 @@ import dev.siro256.forgelib.rtm_glsl.BufferAllocator
 import dev.siro256.forgelib.rtm_glsl.enum.GLBufferUsage
 import org.lwjgl.opengl.GL15
 
+@Suppress("unused")
 open class IndexBufferObject(usage: GLBufferUsage, indices: IntArray) {
     @Suppress("MemberVisibilityCanBePrivate")
     protected val name = GL15.glGenBuffers()

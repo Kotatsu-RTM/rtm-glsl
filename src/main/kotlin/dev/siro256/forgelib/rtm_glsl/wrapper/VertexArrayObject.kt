@@ -2,6 +2,7 @@ package dev.siro256.forgelib.rtm_glsl.wrapper
 
 import org.lwjgl.opengl.GL30
 
+@Suppress("unused")
 abstract class VertexArrayObject {
     @Suppress("MemberVisibilityCanBePrivate")
     protected val name = GL30.glGenVertexArrays()

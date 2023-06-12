@@ -1,5 +1,6 @@
 package dev.siro256.forgelib.rtm_glsl.format
 
+@Suppress("unused", "MemberVisibilityCanBePrivate")
 interface VertexFormat {
     fun toFloatArray(): FloatArray
 

@@ -2,6 +2,7 @@ package dev.siro256.forgelib.rtm_glsl.enum
 
 import org.lwjgl.opengl.GL15
 
+@Suppress("unused")
 enum class GLBufferUsage(val constant: Int) {
     GL_STREAM_DRAW(GL15.GL_STREAM_DRAW),
     GL_STREAM_READ(GL15.GL_STREAM_READ),
