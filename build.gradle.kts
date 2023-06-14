@@ -16,9 +16,9 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
-    implementation("org.lwjgl.lwjgl:lwjgl:2.9.3")
-    implementation("org.apache.logging.log4j:log4j-core:2.20.0")
+    compileOnly(kotlin("stdlib"))
+    compileOnly("org.lwjgl.lwjgl:lwjgl:2.9.3")
+    compileOnly("org.apache.logging.log4j:log4j-core:2.20.0")
 }
 
 configurations.all {
